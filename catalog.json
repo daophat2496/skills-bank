@@ -1,0 +1,49 @@
+{
+  "repo": "daophat2496/skills-bank",
+  "skills": [
+    {
+      "name": "careful",
+      "provider": "daophat2496",
+      "description": "Turns on a guard for the rest of the session that makes every destructive shell command (rm -rf, DROP/TRUNCATE, force-push, git reset --hard, kubectl delete, terraform destroy, mkfs, dd to a device) stop for explicit human confirmation. Trigger on \"be careful\", \"careful mode\", \"I'm touching prod\", \"this is production\", or before working against live infrastructure or a shared database.",
+      "category": "guardrails",
+      "tags": [
+        "safety",
+        "hooks",
+        "production",
+        "git",
+        "database",
+        "kubernetes"
+      ],
+      "status": "approved",
+      "origin": "authored",
+      "upstream": null,
+      "inspired_by": "https://claude.dev/blog/lessons-from-building-claude-code-how-we-use-skills/",
+      "reviewed": "2026-10-04",
+      "notes": "On-demand PreToolUse hook. Uses \"ask\", not \"deny\", so the human stays in control.",
+      "path": "providers/daophat2496/skills/careful",
+      "hooks": true,
+      "scripts": false,
+      "claude_ai": false
+    },
+    {
+      "name": "find-skill",
+      "provider": "daophat2496",
+      "description": "Searches the personal skills bank (github.com/daophat2496/skills-bank) for reviewed skills that fit a need, and explains how to install them at project or user scope. Trigger on \"find a skill for\", \"is there a skill that\", \"which skill should I add to this project\", \"tìm skill\", \"có skill nào để\", or when the user describes a recurring task a skill could cover.",
+      "category": "meta",
+      "tags": [
+        "discovery",
+        "catalog"
+      ],
+      "status": "approved",
+      "origin": "authored",
+      "upstream": null,
+      "inspired_by": null,
+      "reviewed": "2026-10-04",
+      "notes": "The one skill worth installing at user scope everywhere.",
+      "path": "providers/daophat2496/skills/find-skill",
+      "hooks": false,
+      "scripts": false,
+      "claude_ai": true
+    }
+  ]
+}

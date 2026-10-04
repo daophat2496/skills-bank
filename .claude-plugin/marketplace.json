@@ -1,0 +1,62 @@
+{
+  "name": "skills-bank",
+  "owner": {
+    "name": "daophat2496",
+    "url": "https://github.com/daophat2496"
+  },
+  "description": "A personal bank of reviewed agent skills, vendored from their authors and pinned to a commit.",
+  "plugins": [
+    {
+      "name": "all",
+      "source": ".",
+      "description": "Every approved skill in the bank.",
+      "skills": [
+        "./providers/daophat2496/skills/careful",
+        "./providers/daophat2496/skills/find-skill"
+      ],
+      "strict": false
+    },
+    {
+      "name": "pack-daophat2496",
+      "source": ".",
+      "description": "Approved skills from daophat2496: careful, find-skill.",
+      "skills": [
+        "./providers/daophat2496/skills/careful",
+        "./providers/daophat2496/skills/find-skill"
+      ],
+      "strict": false
+    },
+    {
+      "name": "careful",
+      "source": ".",
+      "description": "Turns on a guard for the rest of the session that makes every destructive shell command (rm -rf, DROP/TRUNCATE, force-push, git reset --hard, kubectl delete, terraform destroy, mkfs, dd to a device) stop for explicit human confirmation. Trigger on \"be careful\", \"careful mode\", \"I'm touching prod\", \"this is production\", or before working against live infrastructure or a shared database.",
+      "category": "guardrails",
+      "tags": [
+        "safety",
+        "hooks",
+        "production",
+        "git",
+        "database",
+        "kubernetes"
+      ],
+      "skills": [
+        "./providers/daophat2496/skills/careful"
+      ],
+      "strict": false
+    },
+    {
+      "name": "find-skill",
+      "source": ".",
+      "description": "Searches the personal skills bank (github.com/daophat2496/skills-bank) for reviewed skills that fit a need, and explains how to install them at project or user scope. Trigger on \"find a skill for\", \"is there a skill that\", \"which skill should I add to this project\", \"tìm skill\", \"có skill nào để\", or when the user describes a recurring task a skill could cover.",
+      "category": "meta",
+      "tags": [
+        "discovery",
+        "catalog"
+      ],
+      "skills": [
+        "./providers/daophat2496/skills/find-skill"
+      ],
+      "strict": false
+    }
+  ]
+}

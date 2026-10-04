@@ -1,0 +1,20 @@
+# Skills written for this bank. Ideas are credited in `inspired-by`.
+provider: daophat2496
+homepage: https://github.com/daophat2496
+license: MIT
+
+skills:
+  careful:
+    status: approved
+    category: guardrails
+    tags: [safety, hooks, production, git, database, kubernetes]
+    reviewed: 2026-10-04
+    inspired-by: https://claude.dev/blog/lessons-from-building-claude-code-how-we-use-skills/
+    notes: On-demand PreToolUse hook. Uses "ask", not "deny", so the human stays in control.
+
+  find-skill:
+    status: approved
+    category: meta
+    tags: [discovery, catalog]
+    reviewed: 2026-10-04
+    notes: The one skill worth installing at user scope everywhere.
