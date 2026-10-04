@@ -11,18 +11,40 @@
       "source": ".",
       "description": "Every approved skill in the bank.",
       "skills": [
+        "./providers/daophat2496/skills/blocking-review",
         "./providers/daophat2496/skills/careful",
-        "./providers/daophat2496/skills/find-skill"
+        "./providers/daophat2496/skills/find-skill",
+        "./providers/daophat2496/skills/real-check",
+        "./providers/daophat2496/skills/session-cost"
       ],
       "strict": false
     },
     {
       "name": "pack-daophat2496",
       "source": ".",
-      "description": "Approved skills from daophat2496: careful, find-skill.",
+      "description": "Approved skills from daophat2496: blocking-review, careful, find-skill, real-check, session-cost.",
       "skills": [
+        "./providers/daophat2496/skills/blocking-review",
         "./providers/daophat2496/skills/careful",
-        "./providers/daophat2496/skills/find-skill"
+        "./providers/daophat2496/skills/find-skill",
+        "./providers/daophat2496/skills/real-check",
+        "./providers/daophat2496/skills/session-cost"
+      ],
+      "strict": false
+    },
+    {
+      "name": "blocking-review",
+      "source": ".",
+      "description": "Reviews the current branch's diff (or a given PR, commit range or files) and reports only problems worth blocking the merge for, each with file and line, why it is wrong, and a concrete way to show it fails. Trigger on \"review this\", \"review my changes\", \"anything blocking?\", \"check before I merge\", \"pre-PR review\", \"review code giúp tôi\", or before opening a pull request.",
+      "category": "code-quality",
+      "tags": [
+        "review",
+        "pull-request",
+        "bugs",
+        "pre-merge"
+      ],
+      "skills": [
+        "./providers/daophat2496/skills/blocking-review"
       ],
       "strict": false
     },
@@ -55,6 +77,39 @@
       ],
       "skills": [
         "./providers/daophat2496/skills/find-skill"
+      ],
+      "strict": false
+    },
+    {
+      "name": "real-check",
+      "source": ".",
+      "description": "Before reporting a code change as done, run a real check that exercises it (the project's tests, type-checker, build, or the changed command itself) and report its actual output, or say plainly which check could not run and why. Trigger on \"make sure it works\", \"verify before you say done\", \"did you test it?\", \"kiểm tra thật\", when finishing any change to runnable code, or when working at low effort where checks tend to get skipped.",
+      "category": "verification",
+      "tags": [
+        "testing",
+        "verification",
+        "done-criteria",
+        "low-effort"
+      ],
+      "skills": [
+        "./providers/daophat2496/skills/real-check"
+      ],
+      "strict": false
+    },
+    {
+      "name": "session-cost",
+      "source": ".",
+      "description": "Explains what a Claude Code session cost and why, from the session transcript on disk - turns, cache hit rate, cache-write spikes and their likely causes (pauses, model switches, compaction), output vs input, the most expensive turns - and suggests what to change. Trigger on \"why was this session so expensive\", \"how much did this cost\", \"check my usage\", \"session cost\", \"phiên này tốn bao nhiêu\", or after a long or surprising session.",
+      "category": "data-analysis",
+      "tags": [
+        "cost",
+        "tokens",
+        "cache",
+        "usage",
+        "claude-code"
+      ],
+      "skills": [
+        "./providers/daophat2496/skills/session-cost"
       ],
       "strict": false
     }

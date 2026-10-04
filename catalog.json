@@ -2,6 +2,28 @@
   "repo": "daophat2496/skills-bank",
   "skills": [
     {
+      "name": "blocking-review",
+      "provider": "daophat2496",
+      "description": "Reviews the current branch's diff (or a given PR, commit range or files) and reports only problems worth blocking the merge for, each with file and line, why it is wrong, and a concrete way to show it fails. Trigger on \"review this\", \"review my changes\", \"anything blocking?\", \"check before I merge\", \"pre-PR review\", \"review code giúp tôi\", or before opening a pull request.",
+      "category": "code-quality",
+      "tags": [
+        "review",
+        "pull-request",
+        "bugs",
+        "pre-merge"
+      ],
+      "status": "approved",
+      "origin": "authored",
+      "upstream": null,
+      "inspired_by": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+      "reviewed": "2026-10-04",
+      "notes": "Only merge-blocking findings, each with a way to show it fails. Named to avoid clashing with Claude Code's built-in /code-review.",
+      "path": "providers/daophat2496/skills/blocking-review",
+      "hooks": false,
+      "scripts": false,
+      "claude_ai": true
+    },
+    {
       "name": "careful",
       "provider": "daophat2496",
       "description": "Turns on a guard for the rest of the session that makes every destructive shell command (rm -rf, DROP/TRUNCATE, force-push, git reset --hard, kubectl delete, terraform destroy, mkfs, dd to a device) stop for explicit human confirmation. Trigger on \"be careful\", \"careful mode\", \"I'm touching prod\", \"this is production\", or before working against live infrastructure or a shared database.",
@@ -44,6 +66,51 @@
       "hooks": false,
       "scripts": false,
       "claude_ai": true
+    },
+    {
+      "name": "real-check",
+      "provider": "daophat2496",
+      "description": "Before reporting a code change as done, run a real check that exercises it (the project's tests, type-checker, build, or the changed command itself) and report its actual output, or say plainly which check could not run and why. Trigger on \"make sure it works\", \"verify before you say done\", \"did you test it?\", \"kiểm tra thật\", when finishing any change to runnable code, or when working at low effort where checks tend to get skipped.",
+      "category": "verification",
+      "tags": [
+        "testing",
+        "verification",
+        "done-criteria",
+        "low-effort"
+      ],
+      "status": "approved",
+      "origin": "authored",
+      "upstream": null,
+      "inspired_by": "https://claude.dev/blog/building-with-claude-sonnet-5-5/",
+      "reviewed": "2026-10-04",
+      "notes": "Generalises the \"run a real check before reporting done\" paragraph from the Sonnet 5.5 guide; adds fails-without-the-change and false-green gotchas.",
+      "path": "providers/daophat2496/skills/real-check",
+      "hooks": false,
+      "scripts": false,
+      "claude_ai": true
+    },
+    {
+      "name": "session-cost",
+      "provider": "daophat2496",
+      "description": "Explains what a Claude Code session cost and why, from the session transcript on disk - turns, cache hit rate, cache-write spikes and their likely causes (pauses, model switches, compaction), output vs input, the most expensive turns - and suggests what to change. Trigger on \"why was this session so expensive\", \"how much did this cost\", \"check my usage\", \"session cost\", \"phiên này tốn bao nhiêu\", or after a long or surprising session.",
+      "category": "data-analysis",
+      "tags": [
+        "cost",
+        "tokens",
+        "cache",
+        "usage",
+        "claude-code"
+      ],
+      "status": "approved",
+      "origin": "authored",
+      "upstream": null,
+      "inspired_by": "https://claude.dev/blog/what-a-task-costs-on-opus-5-5/",
+      "reviewed": "2026-10-04",
+      "notes": "Reads the local transcript, no network. Prices are hard-coded and dated; update PRICES when they change.",
+      "path": "providers/daophat2496/skills/session-cost",
+      "hooks": false,
+      "scripts": true,
+      "claude_ai": false
     }
   ]
 }

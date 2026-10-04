@@ -4,8 +4,8 @@
     scripts/zip.py              every skill claude.ai accepts
     scripts/zip.py <name> ...   only these
 
-Output goes to dist/. Skills whose frontmatter uses keys claude.ai rejects (hooks,
-disable-model-invocation, …) are skipped with the reason; they only work in Claude Code.
+Output goes to dist/. Skills that only work in Claude Code (hooks, other frontmatter keys
+claude.ai rejects, or compatibility: "Claude Code only") are skipped.
 """
 import json
 import sys
@@ -27,7 +27,7 @@ def main() -> int:
         if wanted and s["name"] not in wanted:
             continue
         if not s["claude_ai"]:
-            print(f"skip {s['name']}: frontmatter has keys claude.ai rejects")
+            print(f"skip {s['name']}: Claude Code only (hooks, unsupported frontmatter, or declared compatibility)")
             continue
         src = ROOT / s["path"]
         out = dist / f"{s['name']}.zip"

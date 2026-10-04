@@ -18,3 +18,27 @@ skills:
     tags: [discovery, catalog]
     reviewed: 2026-10-04
     notes: The one skill worth installing at user scope everywhere.
+
+  blocking-review:
+    status: approved
+    category: code-quality
+    tags: [review, pull-request, bugs, pre-merge]
+    reviewed: 2026-10-04
+    inspired-by: https://claude.dev/blog/getting-the-most-out-of-opus-5-5/
+    notes: Only merge-blocking findings, each with a way to show it fails. Named to avoid clashing with Claude Code's built-in /code-review.
+
+  real-check:
+    status: approved
+    category: verification
+    tags: [testing, verification, done-criteria, low-effort]
+    reviewed: 2026-10-04
+    inspired-by: https://claude.dev/blog/building-with-claude-sonnet-5-5/
+    notes: Generalises the "run a real check before reporting done" paragraph from the Sonnet 5.5 guide; adds fails-without-the-change and false-green gotchas.
+
+  session-cost:
+    status: approved
+    category: data-analysis
+    tags: [cost, tokens, cache, usage, claude-code]
+    reviewed: 2026-10-04
+    inspired-by: https://claude.dev/blog/what-a-task-costs-on-opus-5-5/
+    notes: Reads the local transcript, no network. Prices are hard-coded and dated; update PRICES when they change.

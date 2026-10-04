@@ -41,6 +41,24 @@ Generated from `providers/*/provider.yaml` by `scripts/build.py`.
 
 <!-- gallery:start -->
 
+### Product verification
+
+| Skill | Provider | What it does | Status | Notes |
+|---|---|---|---|---|
+| [`real-check`](providers/daophat2496/skills/real-check/SKILL.md) | daophat2496 | Before reporting a code change as done, run a real check that exercises it (the project's tests, type-checker, build, or the changed command itself) and report its actual output, or say plainly which check could not run and why. | approved | claude.ai ✓ |
+
+### Data fetching & analysis
+
+| Skill | Provider | What it does | Status | Notes |
+|---|---|---|---|---|
+| [`session-cost`](providers/daophat2496/skills/session-cost/SKILL.md) | daophat2496 | Explains what a Claude Code session cost and why, from the session transcript on disk - turns, cache hit rate, cache-write spikes and their likely causes (pauses, model switches, compaction), output vs input, the most expensive turns - and suggests what to change. | approved | scripts |
+
+### Code quality & review
+
+| Skill | Provider | What it does | Status | Notes |
+|---|---|---|---|---|
+| [`blocking-review`](providers/daophat2496/skills/blocking-review/SKILL.md) | daophat2496 | Reviews the current branch's diff (or a given PR, commit range or files) and reports only problems worth blocking the merge for, each with file and line, why it is wrong, and a concrete way to show it fails. | approved | claude.ai ✓ |
+
 ### Guardrails
 
 | Skill | Provider | What it does | Status | Notes |

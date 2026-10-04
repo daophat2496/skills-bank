@@ -102,7 +102,8 @@ def load() -> tuple[list[dict], list[str]]:
                 "path": sdir.relative_to(ROOT).as_posix(),
                 "hooks": "hooks" in fm,
                 "scripts": any(f.suffix in {".sh", ".py", ".js", ".ts"} or f.stat().st_mode & 0o111 for f in files),
-                "claude_ai": set(fm) <= CLAUDE_AI_KEYS,
+                "claude_ai": set(fm) <= CLAUDE_AI_KEYS
+                and not str(fm.get("compatibility", "")).lower().startswith("claude code only"),
             })
 
     seen: dict[str, str] = {}
